@@ -3,9 +3,13 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import Button from './components/Button.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+  window._states=useState
+  window._val=count
+  window._settera=setCount
 
   return (
     <>
@@ -28,9 +32,17 @@ function App() {
         >
           Count is {count}
         </button>
+        <Button
+          start={0}
+          increment={2}
+          onClick = {() => console.warn("clickfix")}
+        >
+          value updated
+        </Button>
       </section>
 
       <div className="ticks"></div>
+      <a href="/test"> test here </a>
 
       <section id="next-steps">
         <div id="docs">
